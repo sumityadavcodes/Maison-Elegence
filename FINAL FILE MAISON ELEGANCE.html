@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAISON ÉLÉGANCE — Parisian Luxury Beauty Salon & Wellness Studio | India</title>
+  <meta name="description" content="MAISON ÉLÉGANCE — Elegance Is An Experience. An intimate Parisian-inspired luxury beauty salon, hair studio, bridal couture house, and wellness sanctuary in New Delhi & Mumbai." />
+  <meta name="keywords" content="Maison Elegance, Luxury Salon India, Parisian Beauty Salon New Delhi, Bridal Couture Makeup, Luxury Spa, Editorial Hair Studio" />
+  
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#F8F5EF',
+            champagne: '#D6C2A0',
+            'warm-beige': '#E8DED1',
+            espresso: '#29231F',
+            'soft-white': '#FFFFFF',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          transitionTimingFunction: {
+            'editorial': 'cubic-bezier(0.22, 1, 0.36, 1)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Editorial Styles & Refined Animations */
+    :root {
+      --ivory: #F8F5EF;
+      --champagne: #D6C2A0;
+      --warm-beige: #E8DED1;
+      --espresso: #29231F;
+      --soft-white: #FFFFFF;
+    }
+
+    body {
+      background-color: var(--ivory);
+      color: var(--espresso);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background-color: #D6C2A0;
+      color: #29231F;
+    }
+
+    /* Typography Utility Classes */
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .micro-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    /* Hero Slow Scale Animation */
+    @keyframes heroSlowZoom {
+      0% {
+        transform: scale(1.08);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animate-hero-zoom {
+      animation: heroSlowZoom 14s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+
+    /* Subtle Editorial Image Hover */
+    .editorial-img-wrap {
+      overflow: hidden;
+    }
+
+    .editorial-img-wrap img {
+      transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), filter 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .editorial-img-wrap:hover img {
+      transform: scale(1.045);
+    }
+
+    /* Artist Portrait Grayscale to Warm Color */
+    .artist-portrait {
+      filter: grayscale(85%) contrast(1.03);
+    }
+
+    .group:hover .artist-portrait {
+      filter: grayscale(0%) contrast(1);
+      transform: scale(1.04);
+    }
+
+    /* Hairline Animated Underline */
+    .editorial-link {
+      position: relative;
+      display: inline-block;
+    }
+
+    .editorial-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .editorial-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Editable Price Highlight Mode */
+    .price-editable-active [data-price] {
+      border-bottom: 1px dashed #29231F;
+      background-color: rgba(214, 194, 160, 0.28);
+      padding: 2px 6px;
+      border-radius: 2px;
+      cursor: text;
+      outline: none;
+    }
+
+    .price-editable-active [data-price]:focus {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #29231F;
+    }
+
+    /* Custom Form Inputs */
+    .atelier-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(41, 35, 31, 0.25);
+      border-radius: 0;
+      padding: 0.85rem 0;
+      width: 100%;
+      font-size: 0.9375rem;
+      color: #29231F;
+      transition: border-color 0.4s ease;
+    }
+
+    .atelier-input:focus {
+      outline: none;
+      border-bottom-color: #29231F;
+    }
+
+    .atelier-input::placeholder {
+      color: rgba(41, 35, 31, 0.45);
+      font-weight: 300;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8F5EF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D6C2A0;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #29231F;
+    }
+
+    /* Map Warm Aesthetic Filter */
+    .editorial-map {
+      filter: sepia(22%) saturate(75%) contrast(96%) brightness(98%);
+    }
+  </style>
+</head>
+
+<body class="bg-ivory text-espresso antialiased selection:bg-champagne selection:text-espresso">
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY TRANSPARENT NAVIGATION & MOBILE DRAWER                      -->
+  <!-- ===================================================================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-editorial text-soft-white">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+      <div class="flex items-center justify-between h-20 md:h-24 border-b border-soft-white/15 transition-colors duration-700" id="nav-inner">
+        
+        <!-- Left Navigation Links (Desktop) -->
+        <nav class="hidden lg:flex items-center space-x-10" aria-label="Primary Left Navigation">
+          <a href="#about" class="micro-label editorial-link opacity-90 hover:opacity-100 transition-opacity">About</a>
+          <a href="#services" class="micro-label editorial-link opacity-90 hover:opacity-100 transition-opacity">Services</a>
+          <a href="#artists" class="micro-label editorial-link opacity-90 hover:opacity-100 transition-opacity">The Artists</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false" class="lg:hidden p-2 -ml-2 focus:outline-none">
+          <div class="w-6 flex flex-col space-y-1.5">
+            <span class="block h-[1px] w-full bg-current transition-transform duration-300" id="bar-1"></span>
+            <span class="block h-[1px] w-4 bg-current transition-opacity duration-300" id="bar-2"></span>
+            <span class="block h-[1px] w-full bg-current transition-transform duration-300" id="bar-3"></span>
+          </div>
+        </button>
+
+        <!-- Center Brand Wordmark -->
+        <a href="#hero" class="flex flex-col items-center text-center group" aria-label="MAISON ÉLÉGANCE Home">
+          <span class="text-[10px] tracking-[0.35em] uppercase opacity-75 mb-0.5 font-light">Paris • Phagwara</span>
+          <span class="font-editorial text-2xl sm:text-3xl tracking-[0.18em] font-normal uppercase">MAISON ÉLÉGANCE</span>
+        </a>
+
+        <!-- Right Navigation Links & Book CTA (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-10">
+          <a href="#gallery" class="micro-label editorial-link opacity-90 hover:opacity-100 transition-opacity">Gallery</a>
+          <a href="#contact" class="micro-label editorial-link opacity-90 hover:opacity-100 transition-opacity">Contact</a>
+          <a href="#booking" id="nav-book-btn" class="micro-label px-6 py-3 border border-current hover:bg-champagne hover:border-champagne hover:text-espresso transition-all duration-500">
+            Book Now
+          </a>
+        </div>
+
+        <!-- Mobile Quick Book CTA -->
+        <a href="#booking" class="lg:hidden micro-label text-[10px] tracking-[0.2em] border border-current px-3.5 py-2">
+          Book
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-Screen Editorial Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="fixed inset-0 z-40 bg-espresso text-ivory flex flex-col justify-between px-8 pt-28 pb-12 opacity-0 pointer-events-none transition-opacity duration-500 ease-editorial" aria-hidden="true">
+    <div class="border-t border-champagne/25 pt-8">
+      <p class="micro-label text-champagne mb-8">Navigation</p>
+      <nav class="flex flex-col space-y-6" aria-label="Mobile Navigation">
+        <a href="#about" class="mobile-nav-link font-editorial text-4xl font-light tracking-wide hover:text-champagne transition-colors">01. About The Maison</a>
+        <a href="#services" class="mobile-nav-link font-editorial text-4xl font-light tracking-wide hover:text-champagne transition-colors">02. Signature Services</a>
+        <a href="#artists" class="mobile-nav-link font-editorial text-4xl font-light tracking-wide hover:text-champagne transition-colors">03. The Artists</a>
+        <a href="#gallery" class="mobile-nav-link font-editorial text-4xl font-light tracking-wide hover:text-champagne transition-colors">04. The Maison Gallery</a>
+        <a href="#experiences" class="mobile-nav-link font-editorial text-4xl font-light tracking-wide hover:text-champagne transition-colors">05. Client Experiences</a>
+        <a href="#contact" class="mobile-nav-link font-editorial text-4xl font-light tracking-wide hover:text-champagne transition-colors">06. Flagship & Hours</a>
+      </nav>
+    </div>
+
+    <div class="border-t border-champagne/25 pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <p class="micro-label text-champagne text-[10px]">Lovely Professional University, Phagwara</p>
+        <p class="text-xs text-ivory/70 mt-1">Tue – Sun: 10:00 AM – 8:30 PM</p>
+      </div>
+      <a href="#booking" class="mobile-nav-link micro-label bg-champagne text-espresso text-center px-6 py-3.5">
+        Book Your Experience
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ===================================================================== -->
+  <!-- 2. FULL-SCREEN HERO SECTION                                           -->
+  <!-- ===================================================================== -->
+  <section id="hero" class="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden bg-espresso text-soft-white">
+    <!-- Background Luxury Salon Interior Photography -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=2070&q=85"
+        alt="MAISON ÉLÉGANCE Luxury Parisian Salon Interior"
+        onerror="this.src='https://placehold.co/1920x1080/29231F/D6C2A0?text=MAISON+ELEGANCE'"
+        class="w-full h-full object-cover object-center animate-hero-zoom opacity-70"
+      />
+      <!-- Refined Espresso Vignette Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-espresso/65 via-espresso/40 to-espresso/80"></div>
+    </div>
+
+    <!-- Hero Editorial Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 text-center flex flex-col items-center mt-12">
+      <p class="micro-label text-champagne mb-6 tracking-[0.28em]">
+        Elegance Is An Experience
+      </p>
+
+      <h1 class="font-editorial text-5xl sm:text-7xl md:text-[5.25rem] font-light leading-[1.06] tracking-[-0.01em] text-soft-white mb-7">
+        Discover Your Most <br class="hidden sm:inline" />
+        <span class="italic font-normal text-champagne">Elegant</span> Self.
+      </h1>
+
+      <p class="max-w-xl text-sm sm:text-base md:text-lg font-light text-ivory/85 leading-relaxed mb-11">
+        An intimate destination for exceptional beauty, refined experiences, and the art of self-care.
+      </p>
+
+      <!-- Dual Editorial CTAs -->
+      <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-8 w-full sm:w-auto">
+        <a href="#booking" class="w-full sm:w-auto micro-label bg-champagne text-espresso px-9 py-4 border border-champagne hover:bg-soft-white hover:border-soft-white transition-all duration-500">
+          Book Your Experience
+        </a>
+        <a href="#about" class="w-full sm:w-auto micro-label text-soft-white px-9 py-4 border border-soft-white/40 hover:border-champagne hover:text-champagne transition-all duration-500">
+          Discover Our World
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Down Hairline Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-3 opacity-75">
+      <span class="micro-label text-[9px] tracking-[0.3em] text-ivory">Scroll</span>
+      <div class="w-[1px] h-10 bg-gradient-to-b from-champagne to-transparent"></div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 3. ABOUT US — EDITORIAL STORYTELLING                                  -->
+  <!-- ===================================================================== -->
+  <section id="about" class="py-24 sm:py-32 lg:py-40 bg-ivory border-b border-champagne/40">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
+        
+        <!-- Left Asymmetric Editorial Photography Composition -->
+        <div class="lg:col-span-6 relative reveal">
+          <div class="grid grid-cols-12 gap-4 sm:gap-6 items-end">
+            <div class="col-span-8 editorial-img-wrap border border-champagne/40 bg-warm-beige">
+              <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
+                alt="Serene Private Sanctuary at Maison Élégance"
+                onerror="this.src='https://placehold.co/800x1050/E8DED1/29231F?text=Maison+Sanctuary'"
+                class="w-full h-[380px] sm:h-[500px] object-cover"
+              />
+            </div>
+            <div class="col-span-4 editorial-img-wrap border border-champagne/40 bg-warm-beige mb-8 sm:mb-14">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85"
+                alt="Botanical Luxury Facial Ritual"
+                onerror="this.src='https://placehold.co/500x700/D6C2A0/29231F?text=Botanical+Ritual'"
+                class="w-full h-[240px] sm:h-[320px] object-cover"
+              />
+            </div>
+          </div>
+          <!-- Subtle Architectural Caption -->
+          <div class="mt-4 flex items-center justify-between text-xs text-espresso/60 font-light">
+            <span class="micro-label text-[10px]">L'Art du Soin • Est. Paris & Phagwara</span>
+            <span>Suite Privée N° 01</span>
+          </div>
+        </div>
+
+        <!-- Right Brand Storytelling -->
+        <div class="lg:col-span-6 lg:pl-8 reveal reveal-delay-1">
+          <p class="micro-label text-espresso/60 mb-5">01 — The Maison Philosophy</p>
+          
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-[3.5rem] font-light leading-[1.12] text-espresso mb-8">
+            A World of Beauty. <br />
+            <span class="italic">A Touch of Elegance.</span>
+          </h2>
+
+          <div class="w-16 h-[1px] bg-champagne mb-8"></div>
+
+          <div class="space-y-5 text-espresso/80 text-base leading-[1.85] font-light">
+            <p>
+              Conceived in the spirit of historic Parisian haute-beauté maisons and thoughtfully tailored for India’s most discerning clientele, <strong class="font-normal text-espresso">MAISON ÉLÉGANCE</strong> redefines the modern beauty sanctuary.
+            </p>
+            <p>
+              Step beyond the bustle of the city into a calm architectural haven bathed in warm travertine, soft natural light, and bespoke botanical aromas. Every ritual begins with an unhurried private consultation—honoring your individual features, hair architecture, and skin vitality.
+            </p>
+            <p>
+              Led by internationally trained hair directors, master colourists, bridal couturiers, and holistic aestheticians, each visit is choreographed as a restorative pause where timeless artistry meets effortless serenity.
+            </p>
+          </div>
+
+          <!-- Editorial Pillar Highlights -->
+          <div class="grid grid-cols-3 gap-6 mt-10 pt-8 border-t border-champagne/50">
+            <div>
+              <p class="font-editorial text-3xl sm:text-4xl text-espresso font-normal">100%</p>
+              <p class="micro-label text-[10px] text-espresso/65 mt-1">Bespoke Consultations</p>
+            </div>
+            <div>
+              <p class="font-editorial text-3xl sm:text-4xl text-espresso font-normal">Parisian</p>
+              <p class="micro-label text-[10px] text-espresso/65 mt-1">Haute Formulations</p>
+            </div>
+            <div>
+              <p class="font-editorial text-3xl sm:text-4xl text-espresso font-normal">Private</p>
+              <p class="micro-label text-[10px] text-espresso/65 mt-1">Bridal & Spa Suites</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 4. OUR SIGNATURE SERVICES (WITH EDITABLE INR PRICING)                 -->
+  <!-- ===================================================================== -->
+  <section id="services" class="py-24 sm:py-32 lg:py-40 bg-warm-beige/45 border-b border-champagne/40">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <!-- Section Header + Sleek Price Editor Toggle -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 reveal">
+        <div>
+          <p class="micro-label text-espresso/60 mb-4">02 — Curated Menu of Rituals</p>
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-espresso leading-tight">
+            Our Signature Services
+          </h2>
+        </div>
+
+        <!-- Subtle Editable INR Price Controls -->
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="toggle-edit-prices" type="button" class="micro-label text-[10px] px-4 py-2.5 border border-espresso/30 text-espresso hover:bg-espresso hover:text-ivory transition-all duration-300 flex items-center gap-2">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+            </svg>
+            <span id="edit-btn-label">Edit INR Prices</span>
+          </button>
+          <button id="reset-prices-btn" type="button" class="hidden micro-label text-[10px] px-3.5 py-2.5 border border-espresso/20 text-espresso/70 hover:text-espresso transition-colors">
+            Reset Default
+          </button>
+        </div>
+      </div>
+
+      <!-- Helper Banner when Edit Mode is Active -->
+      <div id="edit-mode-notice" class="hidden mb-10 p-4 bg-ivory border border-champagne text-xs text-espresso/85 flex items-center justify-between">
+        <span><strong>Price Edit Mode Active:</strong> Click any Indian Rupee (₹) amount below to customize your salon menu pricing. Changes save automatically in your browser.</span>
+        <button type="button" id="done-edit-btn" class="micro-label text-[10px] underline ml-4">Done</button>
+      </div>
+
+      <!-- 2x2 Editorial Service Cards Grid -->
+      <div id="services-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- CARD 1: HAIR STUDIO -->
+        <article class="bg-ivory border border-champagne/60 p-8 sm:p-12 flex flex-col justify-between transition-all duration-500 hover:border-espresso/40 reveal">
+          <div>
+            <div class="flex items-center justify-between border-b border-champagne/50 pb-6 mb-8">
+              <div>
+                <span class="micro-label text-[10px] text-espresso/55 block mb-1.5">Atelier I</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl font-normal tracking-wide text-espresso">HAIR STUDIO</h3>
+              </div>
+              <span class="font-editorial italic text-lg text-espresso/60">Coupe & Soin</span>
+            </div>
+            <p class="text-sm text-espresso/70 font-light mb-8 leading-relaxed">
+              Precision architectural haircuts, luminous French balayage, restorative Kerastase rituals, and silk smoothening tailored to Indian hair textures.
+            </p>
+
+            <ul class="space-y-5">
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5 group">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Signature Couture Haircut & Finish</span>
+                  <span class="block text-xs text-espresso/55 font-light">60 mins • Bespoke face-framing cut & blow-dry</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="hair-1">3,500</span></span>
+                  <button type="button" data-select-service="Hair Studio — Signature Couture Haircut (₹3,500)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5 group">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Editorial Styling & Velours Blow-Dry</span>
+                  <span class="block text-xs text-espresso/55 font-light">45 mins • Volume, waves, or sleek Parisian chignon</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="hair-2">2,200</span></span>
+                  <button type="button" data-select-service="Hair Studio — Editorial Styling & Blow-Dry (₹2,200)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5 group">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Parisian Elixir Hair Spa Ritual</span>
+                  <span class="block text-xs text-espresso/55 font-light">75 mins • Scalp therapy, steam & deep cellular masque</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="hair-3">4,800</span></span>
+                  <button type="button" data-select-service="Hair Studio — Parisian Elixir Hair Spa (₹4,800)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5 group">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Bespoke Hair Colour & French Balayage</span>
+                  <span class="block text-xs text-espresso/55 font-light">150 mins • Ammonia-free gloss & hand-painted dimension</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="hair-4">9,500</span></span>
+                  <button type="button" data-select-service="Hair Studio — Bespoke Hair Colour & Balayage (₹9,500)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 pb-1 group">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Silk Keratin & Cashmere Smoothening</span>
+                  <span class="block text-xs text-espresso/55 font-light">180 mins • Frizz-free mirror shine for up to 5 months</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="hair-5">11,000</span></span>
+                  <button type="button" data-select-service="Hair Studio — Silk Keratin & Smoothening (₹11,000)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CARD 2: SKIN & BEAUTY -->
+        <article class="bg-ivory border border-champagne/60 p-8 sm:p-12 flex flex-col justify-between transition-all duration-500 hover:border-espresso/40 reveal reveal-delay-1">
+          <div>
+            <div class="flex items-center justify-between border-b border-champagne/50 pb-6 mb-8">
+              <div>
+                <span class="micro-label text-[10px] text-espresso/55 block mb-1.5">Atelier II</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl font-normal tracking-wide text-espresso">SKIN & BEAUTY</h3>
+              </div>
+              <span class="font-editorial italic text-lg text-espresso/60">Visage & Éclat</span>
+            </div>
+            <p class="text-sm text-espresso/70 font-light mb-8 leading-relaxed">
+              Haute-dermatological facials, oxygenating clean-ups, deep cellular hydration, and botanical detan therapies performed in tranquil private suites.
+            </p>
+
+            <ul class="space-y-5">
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Maison 24K Gold & Rose Luxury Facial</span>
+                  <span class="block text-xs text-espresso/55 font-light">90 mins • Sculpting lymphatic massage & collagen infusion</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="skin-1">6,500</span></span>
+                  <button type="button" data-select-service="Skin & Beauty — Maison 24K Gold Luxury Facial (₹6,500)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Botanical Purifying Clean-Up</span>
+                  <span class="block text-xs text-espresso/55 font-light">50 mins • Gentle enzymatic exfoliation & pore refinement</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="skin-2">3,200</span></span>
+                  <button type="button" data-select-service="Skin & Beauty — Botanical Purifying Clean-Up (₹3,200)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Hydra-Lumière Deep Skin Hydration</span>
+                  <span class="block text-xs text-espresso/55 font-light">75 mins • Hyaluronic multi-layer barrier replenishment</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="skin-3">5,800</span></span>
+                  <button type="button" data-select-service="Skin & Beauty — Hydra-Lumière Skin Hydration (₹5,800)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 pb-1">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Saffron & Pearl Radiance Detan Treatment</span>
+                  <span class="block text-xs text-espresso/55 font-light">60 mins • Restores even-toned luminosity & calm</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="skin-4">3,800</span></span>
+                  <button type="button" data-select-service="Skin & Beauty — Saffron & Pearl Detan Treatment (₹3,800)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CARD 3: NAIL LOUNGE -->
+        <article class="bg-ivory border border-champagne/60 p-8 sm:p-12 flex flex-col justify-between transition-all duration-500 hover:border-espresso/40 reveal">
+          <div>
+            <div class="flex items-center justify-between border-b border-champagne/50 pb-6 mb-8">
+              <div>
+                <span class="micro-label text-[10px] text-espresso/55 block mb-1.5">Atelier III</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl font-normal tracking-wide text-espresso">NAIL LOUNGE</h3>
+              </div>
+              <span class="font-editorial italic text-lg text-espresso/60">Mains & Pieds</span>
+            </div>
+            <p class="text-sm text-espresso/70 font-light mb-8 leading-relaxed">
+              Immaculate cuticle care, aromatherapy hand and foot rituals, featherlight Japanese soft-gel extensions, and minimalist couture nail artistry.
+            </p>
+
+            <ul class="space-y-5">
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Parisian Spa Manicure</span>
+                  <span class="block text-xs text-espresso/55 font-light">50 mins • Warm shea soak, scrub, massage & French polish</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="nail-1">2,000</span></span>
+                  <button type="button" data-select-service="Nail Lounge — Parisian Spa Manicure (₹2,000)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Velvet Rose & Shea Pedicure</span>
+                  <span class="block text-xs text-espresso/55 font-light">65 mins • Reflexology foot ritual & paraffin veil</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="nail-2">2,600</span></span>
+                  <button type="button" data-select-service="Nail Lounge — Velvet Rose & Shea Pedicure (₹2,600)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/25 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Sculpted Soft-Gel Extensions</span>
+                  <span class="block text-xs text-espresso/55 font-light">90 mins • Natural-feel architectural shaping & gel gloss</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="nail-3">4,500</span></span>
+                  <button type="button" data-select-service="Nail Lounge — Sculpted Soft-Gel Extensions (₹4,500)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 pb-1">
+                <div>
+                  <span class="font-editorial text-xl text-espresso">Minimalist Couture Nail Art</span>
+                  <span class="block text-xs text-espresso/55 font-light">40 mins • Micro-French, pearl chrome & bespoke brushwork</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-espresso">₹<span data-price="nail-4">1,800</span></span>
+                  <button type="button" data-select-service="Nail Lounge — Minimalist Couture Nail Art (₹1,800)" class="select-service-btn micro-label text-[9px] text-espresso/60 hover:text-espresso underline">Reserve</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CARD 4: BRIDAL COUTURE -->
+        <article class="bg-espresso text-ivory border border-espresso p-8 sm:p-12 flex flex-col justify-between transition-all duration-500 reveal reveal-delay-1">
+          <div>
+            <div class="flex items-center justify-between border-b border-champagne/25 pb-6 mb-8">
+              <div>
+                <span class="micro-label text-[10px] text-champagne block mb-1.5">Atelier IV • Haute Exclusivité</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl font-normal tracking-wide text-soft-white">BRIDAL COUTURE</h3>
+              </div>
+              <span class="font-editorial italic text-lg text-champagne">La Mariée</span>
+            </div>
+            <p class="text-sm text-ivory/75 font-light mb-8 leading-relaxed">
+              Skin-first, luminous bridal artistry created in our private bridal salon—designed to photograph effortlessly under natural daylight and evening chandeliers.
+            </p>
+
+            <ul class="space-y-5">
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/20 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-soft-white">The Royale Bridal Couture Makeup</span>
+                  <span class="block text-xs text-ivory/60 font-light">180 mins • HD/Airbrush skin prep, lashes, hairstyling & draping</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-champagne">₹<span data-price="bridal-1">45,000</span></span>
+                  <button type="button" data-select-service="Bridal Couture — The Royale Bridal Makeup (₹45,000)" class="select-service-btn micro-label text-[9px] text-champagne hover:text-soft-white underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/20 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-soft-white">Engagement & Cocktail Lumière Look</span>
+                  <span class="block text-xs text-ivory/60 font-light">120 mins • Soft-focus editorial glow & bespoke hairstyling</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-champagne">₹<span data-price="bridal-2">22,000</span></span>
+                  <button type="button" data-select-service="Bridal Couture — Engagement & Cocktail Look (₹22,000)" class="select-service-btn micro-label text-[9px] text-champagne hover:text-soft-white underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 border-b border-champagne/20 pb-3.5">
+                <div>
+                  <span class="font-editorial text-xl text-soft-white">Soirée & Family Party Makeup</span>
+                  <span class="block text-xs text-ivory/60 font-light">90 mins • Refined evening radiance & hair styling</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-champagne">₹<span data-price="bridal-3">12,000</span></span>
+                  <button type="button" data-select-service="Bridal Couture — Soirée Party Makeup (₹12,000)" class="select-service-btn micro-label text-[9px] text-champagne hover:text-soft-white underline">Reserve</button>
+                </div>
+              </li>
+
+              <li class="flex items-baseline justify-between gap-4 pb-1">
+                <div>
+                  <span class="font-editorial text-xl text-soft-white">Editorial Bridal Hairstyling & Couture Draping</span>
+                  <span class="block text-xs text-ivory/60 font-light">75 mins • Intricate floral chignons, waves & dupatta setting</span>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                  <span class="font-editorial text-xl font-medium text-champagne">₹<span data-price="bridal-4">8,500</span></span>
+                  <button type="button" data-select-service="Bridal Couture — Bridal Hairstyling & Draping (₹8,500)" class="select-service-btn micro-label text-[9px] text-champagne hover:text-soft-white underline">Reserve</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 5. THE ARTISTS — MASTER STYLISTS & CREATIVE DIRECTORS                 -->
+  <!-- ===================================================================== -->
+  <section id="artists" class="py-24 sm:py-32 lg:py-40 bg-ivory border-b border-champagne/40">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="micro-label text-espresso/60 mb-4">03 — Savoir-Faire & Mastery</p>
+        <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-espresso leading-tight mb-5">
+          The Artists
+        </h2>
+        <p class="text-sm sm:text-base text-espresso/75 font-light leading-relaxed">
+          Each specialist at MAISON ÉLÉGANCE brings international editorial pedigree, quiet precision, and a deeply personal approach to beauty.
+        </p>
+      </div>
+
+      <!-- 4 Minimalist Artist Portraits -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-9">
+
+        <!-- Artist 1 -->
+        <div class="group reveal">
+          <div class="editorial-img-wrap border border-champagne/50 bg-warm-beige mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85"
+              alt="Camille Laurent — Creative Hair Director"
+              onerror="this.src='https://placehold.co/600x800/E8DED1/29231F?text=Camille+Laurent'"
+              class="w-full h-[400px] object-cover object-top artist-portrait"
+            />
+          </div>
+          <p class="micro-label text-[10px] text-espresso/60 mb-1">Creative Hair Director</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl font-normal text-espresso mb-2">Camille Laurent</h3>
+          <p class="text-xs text-espresso/70 font-light leading-relaxed mb-4">
+            Trained in Paris’s 8th Arrondissement; renowned for architectural dry-cutting and effortless Parisian movement.
+          </p>
+          <button type="button" data-select-artist="Camille Laurent (Creative Hair Director)" class="select-artist-btn micro-label text-[10px] editorial-link text-espresso">
+            Book With Camille →
+          </button>
+        </div>
+
+        <!-- Artist 2 -->
+        <div class="group reveal reveal-delay-1">
+          <div class="editorial-img-wrap border border-champagne/50 bg-warm-beige mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85"
+              alt="Aarav Malhotra — Master Colourist"
+              onerror="this.src='https://placehold.co/600x800/E8DED1/29231F?text=Aarav+Malhotra'"
+              class="w-full h-[400px] object-cover object-top artist-portrait"
+            />
+          </div>
+          <p class="micro-label text-[10px] text-espresso/60 mb-1">Master Colourist & Keratin Specialist</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl font-normal text-espresso mb-2">Aarav Malhotra</h3>
+          <p class="text-xs text-espresso/70 font-light leading-relaxed mb-4">
+            Specialist in lived-in sun-kissed balayage, dimensional brunette glosses, and restorative silk keratin rituals.
+          </p>
+          <button type="button" data-select-artist="Aarav Malhotra (Master Colourist)" class="select-artist-btn micro-label text-[10px] editorial-link text-espresso">
+            Book With Aarav →
+          </button>
+        </div>
+
+        <!-- Artist 3 -->
+        <div class="group reveal reveal-delay-2">
+          <div class="editorial-img-wrap border border-champagne/50 bg-warm-beige mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=85"
+              alt="Meera Kapoor — Head of Bridal Couture"
+              onerror="this.src='https://placehold.co/600x800/E8DED1/29231F?text=Meera+Kapoor'"
+              class="w-full h-[400px] object-cover object-top artist-portrait"
+            />
+          </div>
+          <p class="micro-label text-[10px] text-espresso/60 mb-1">Head of Bridal Couture</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl font-normal text-espresso mb-2">Meera Kapoor</h3>
+          <p class="text-xs text-espresso/70 font-light leading-relaxed mb-4">
+            Celebrated for luminous, second-skin bridal radiance that honors heritage couture with contemporary restraint.
+          </p>
+          <button type="button" data-select-artist="Meera Kapoor (Head of Bridal Couture)" class="select-artist-btn micro-label text-[10px] editorial-link text-espresso">
+            Book With Meera →
+          </button>
+        </div>
+
+        <!-- Artist 4 -->
+        <div class="group reveal reveal-delay-3">
+          <div class="editorial-img-wrap border border-champagne/50 bg-warm-beige mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=85"
+              alt="Elena Rostova — Lead Aesthetician"
+              onerror="this.src='https://placehold.co/600x800/E8DED1/29231F?text=Elena+Rostova'"
+              class="w-full h-[400px] object-cover object-top artist-portrait"
+            />
+          </div>
+          <p class="micro-label text-[10px] text-espresso/60 mb-1">Lead Aesthetician & Skin Architect</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl font-normal text-espresso mb-2">Elena Rostova</h3>
+          <p class="text-xs text-espresso/70 font-light leading-relaxed mb-4">
+            Master of sculptural facial massage, cellular hydration protocols, and pre-bridal skin luminosity programs.
+          </p>
+          <button type="button" data-select-artist="Elena Rostova (Lead Aesthetician)" class="select-artist-btn micro-label text-[10px] editorial-link text-espresso">
+            Book With Elena →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 6. THE MAISON GALLERY — EDITORIAL LOOKBOOK & LIGHTBOX                 -->
+  <!-- ===================================================================== -->
+  <section id="gallery" class="py-24 sm:py-32 lg:py-40 bg-warm-beige/35 border-b border-champagne/40">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <!-- Header & Filter Bar -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 reveal">
+        <div>
+          <p class="micro-label text-espresso/60 mb-4">04 — Visual Journal</p>
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-espresso leading-tight">
+            The Maison Gallery
+          </h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 sm:gap-3" role="tablist" aria-label="Gallery Categories">
+          <button type="button" data-filter="all" class="gallery-filter-btn active micro-label text-[10px] px-4 py-2.5 bg-espresso text-ivory border border-espresso transition-all">All</button>
+          <button type="button" data-filter="interiors" class="gallery-filter-btn micro-label text-[10px] px-4 py-2.5 bg-transparent text-espresso border border-espresso/25 hover:border-espresso transition-all">Salon Interiors</button>
+          <button type="button" data-filter="hair" class="gallery-filter-btn micro-label text-[10px] px-4 py-2.5 bg-transparent text-espresso border border-espresso/25 hover:border-espresso transition-all">Hair & Rituals</button>
+          <button type="button" data-filter="bridal" class="gallery-filter-btn micro-label text-[10px] px-4 py-2.5 bg-transparent text-espresso border border-espresso/25 hover:border-espresso transition-all">Bridal Couture</button>
+          <button type="button" data-filter="nails" class="gallery-filter-btn micro-label text-[10px] px-4 py-2.5 bg-transparent text-espresso border border-espresso/25 hover:border-espresso transition-all">Nail Artistry</button>
+        </div>
+      </div>
+
+      <!-- Editorial Asymmetric Gallery Grid -->
+      <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+        
+        <!-- Item 1 -->
+        <figure data-category="interiors" class="gallery-item md:col-span-7 editorial-img-wrap relative group cursor-pointer border border-champagne/50 bg-ivory reveal">
+          <img
+            src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&q=85"
+            alt="Travertine Styling Sanctuary — Defence Colony Flagship"
+            onerror="this.src='https://placehold.co/1000x700/E8DED1/29231F?text=Salon+Sanctuary'"
+            class="w-full h-[360px] sm:h-[460px] object-cover"
+          />
+          <figcaption class="absolute inset-0 bg-espresso/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 text-soft-white">
+            <span class="micro-label text-[10px] text-champagne mb-1">Salon Interiors</span>
+            <p class="font-editorial text-2xl">The Travertine Styling Lounge</p>
+          </figcaption>
+        </figure>
+
+        <!-- Item 2 -->
+        <figure data-category="bridal" class="gallery-item md:col-span-5 editorial-img-wrap relative group cursor-pointer border border-champagne/50 bg-ivory reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85"
+            alt="La Mariée — Editorial Bridal Couture Look"
+            onerror="this.src='https://placehold.co/800x700/E8DED1/29231F?text=Bridal+Couture'"
+            class="w-full h-[360px] sm:h-[460px] object-cover"
+          />
+          <figcaption class="absolute inset-0 bg-espresso/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 text-soft-white">
+            <span class="micro-label text-[10px] text-champagne mb-1">Bridal Couture</span>
+            <p class="font-editorial text-2xl">Lumière Bridal Radiance</p>
+          </figcaption>
+        </figure>
+
+        <!-- Item 3 -->
+        <figure data-category="hair" class="gallery-item md:col-span-4 editorial-img-wrap relative group cursor-pointer border border-champagne/50 bg-ivory reveal">
+          <img
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=85"
+            alt="Silk Balayage & Parisian Blow-Dry"
+            onerror="this.src='https://placehold.co/700x750/E8DED1/29231F?text=Hair+Studio'"
+            class="w-full h-[360px] sm:h-[420px] object-cover"
+          />
+          <figcaption class="absolute inset-0 bg-espresso/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 text-soft-white">
+            <span class="micro-label text-[10px] text-champagne mb-1">Hair & Rituals</span>
+            <p class="font-editorial text-2xl">Velours Waves & Gloss</p>
+          </figcaption>
+        </figure>
+
+        <!-- Item 4 -->
+        <figure data-category="nails" class="gallery-item md:col-span-4 editorial-img-wrap relative group cursor-pointer border border-champagne/50 bg-ivory reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=85"
+            alt="Minimalist Pearl & Nude Couture Manicure"
+            onerror="this.src='https://placehold.co/700x750/E8DED1/29231F?text=Nail+Artistry'"
+            class="w-full h-[360px] sm:h-[420px] object-cover"
+          />
+          <figcaption class="absolute inset-0 bg-espresso/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 text-soft-white">
+            <span class="micro-label text-[10px] text-champagne mb-1">Nail Artistry</span>
+            <p class="font-editorial text-2xl">Porcelain Micro-French</p>
+          </figcaption>
+        </figure>
+
+        <!-- Item 5 -->
+        <figure data-category="interiors" class="gallery-item md:col-span-4 editorial-img-wrap relative group cursor-pointer border border-champagne/50 bg-ivory reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85"
+            alt="Botanical Wellness & Facial Suite"
+            onerror="this.src='https://placehold.co/700x750/E8DED1/29231F?text=Wellness+Suite'"
+            class="w-full h-[360px] sm:h-[420px] object-cover"
+          />
+          <figcaption class="absolute inset-0 bg-espresso/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 text-soft-white">
+            <span class="micro-label text-[10px] text-champagne mb-1">Wellness & Skin</span>
+            <p class="font-editorial text-2xl">Private Botanical Facial Suite</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-espresso/95 hidden items-center justify-center p-6 sm:p-12" role="dialog" aria-modal="true" aria-label="Gallery Image Preview">
+    <button id="lightbox-close" type="button" aria-label="Close Preview" class="absolute top-6 right-6 sm:top-10 sm:right-10 micro-label text-ivory hover:text-champagne p-3">
+      Close ✕
+    </button>
+    <div class="max-w-4xl w-full flex flex-col items-center text-center">
+      <img id="lightbox-img" src="" alt="" class="max-h-[75vh] w-auto object-contain border border-champagne/30 mb-5" />
+      <p id="lightbox-category" class="micro-label text-[10px] text-champagne mb-1"></p>
+      <p id="lightbox-caption" class="font-editorial text-2xl sm:text-3xl text-ivory"></p>
+    </div>
+  </div>
+
+
+  <!-- ===================================================================== -->
+  <!-- 7. CLIENT EXPERIENCES — TESTIMONIALS                                  -->
+  <!-- ===================================================================== -->
+  <section id="experiences" class="py-24 sm:py-32 lg:py-40 bg-ivory border-b border-champagne/40">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <p class="micro-label text-espresso/60 mb-4">05 — Guest Reflections</p>
+        <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-espresso leading-tight">
+          Beauty That Leaves <br class="hidden sm:inline" />
+          <span class="italic">An Impression.</span>
+        </h2>
+      </div>
+
+      <!-- 3 Editorial Testimonial Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <article class="bg-soft-white border border-champagne/60 p-8 sm:p-10 flex flex-col justify-between reveal">
+          <div>
+            <!-- 5 Champagne Stars -->
+            <div class="flex items-center space-x-1.5 text-champagne mb-6" aria-label="5 out of 5 stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote class="font-editorial italic text-2xl text-espresso leading-relaxed mb-8">
+              “Walking into MAISON ÉLÉGANCE feels like stepping onto Rue Saint-Honoré. Camille gave me the most effortless haircut of my life, and the quiet luxury of the space is unmatched in Delhi.”
+            </blockquote>
+          </div>
+          <div class="border-t border-champagne/40 pt-5 flex items-center justify-between">
+            <div>
+              <p class="font-editorial text-xl text-espresso">Ananya Singhania</p>
+              <p class="micro-label text-[9px] text-espresso/55">Signature Haircut & Elixir Spa</p>
+            </div>
+            <span class="text-xs text-espresso/45">New Delhi</span>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="bg-soft-white border border-champagne/60 p-8 sm:p-10 flex flex-col justify-between reveal reveal-delay-1">
+          <div>
+            <div class="flex items-center space-x-1.5 text-champagne mb-6" aria-label="5 out of 5 stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote class="font-editorial italic text-2xl text-espresso leading-relaxed mb-8">
+              “Meera and her bridal team created the exact luminous, skin-like wedding look I dreamed of. No heavy layers—just timeless radiance that lasted through every ceremony.”
+            </blockquote>
+          </div>
+          <div class="border-t border-champagne/40 pt-5 flex items-center justify-between">
+            <div>
+              <p class="font-editorial text-xl text-espresso">Rhea Kapur-Mehta</p>
+              <p class="micro-label text-[9px] text-espresso/55">The Royale Bridal Couture</p>
+            </div>
+            <span class="text-xs text-espresso/45">Mumbai</span>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="bg-soft-white border border-champagne/60 p-8 sm:p-10 flex flex-col justify-between reveal reveal-delay-2">
+          <div>
+            <div class="flex items-center space-x-1.5 text-champagne mb-6" aria-label="5 out of 5 stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote class="font-editorial italic text-2xl text-espresso leading-relaxed mb-8">
+              “The 24K Gold & Rose Facial with Elena is pure serenity. Every detail—from the warm linen to the herbal tisane afterward—whispers refinement and care.”
+            </blockquote>
+          </div>
+          <div class="border-t border-champagne/40 pt-5 flex items-center justify-between">
+            <div>
+              <p class="font-editorial text-xl text-espresso">Devika Jindal</p>
+              <p class="micro-label text-[9px] text-espresso/55">24K Gold Facial & Nail Lounge</p>
+            </div>
+            <span class="text-xs text-espresso/45">New Delhi</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="text-center text-xs text-espresso/45 font-light mt-10">
+        * Curated guest impressions shown for editorial presentation.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 8. APPOINTMENT BOOKING INTERFACE                                      -->
+  <!-- ===================================================================== -->
+  <section id="booking" class="py-24 sm:py-32 lg:py-40 bg-warm-beige/55 border-b border-champagne/40">
+    <div class="max-w-[1140px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <div class="bg-soft-white border border-champagne p-8 sm:p-14 lg:p-20 shadow-[0_25px_70px_-25px_rgba(41,35,31,0.08)] reveal">
+        
+        <!-- Booking Form Header -->
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <p class="micro-label text-espresso/60 mb-3">06 — Private Reservations</p>
+          <h2 class="font-editorial text-4xl sm:text-5xl font-light text-espresso mb-4">
+            Reserve Your Experience
+          </h2>
+          <p class="text-sm text-espresso/70 font-light leading-relaxed">
+            Allow our concierge to curate your private suite and pair you with your preferred specialist.
+          </p>
+        </div>
+
+        <!-- Interactive Reservation Form -->
+        <form id="booking-form" class="space-y-8" novalidate>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+            
+            <!-- Full Name -->
+            <div>
+              <label for="guest-name" class="micro-label text-[10px] text-espresso/70 block mb-1">Full Name *</label>
+              <input type="text" id="guest-name" name="guestName" required placeholder="e.g., Tara Sharma" class="atelier-input" />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+              <label for="guest-phone" class="micro-label text-[10px] text-espresso/70 block mb-1">Phone / WhatsApp Number *</label>
+              <input type="tel" id="guest-phone" name="guestPhone" required placeholder="+91 98110 XXXXX" class="atelier-input" />
+            </div>
+
+            <!-- Service Selection -->
+            <div>
+              <label for="service-select" class="micro-label text-[10px] text-espresso/70 block mb-1">Signature Ritual / Service *</label>
+              <select id="service-select" name="service" required class="atelier-input bg-transparent cursor-pointer">
+                <option value="" disabled selected>Select a bespoke service</option>
+                <optgroup label="HAIR STUDIO">
+                  <option value="Hair Studio — Signature Couture Haircut (₹3,500)">Signature Couture Haircut — ₹3,500</option>
+                  <option value="Hair Studio — Editorial Styling & Blow-Dry (₹2,200)">Editorial Styling & Velours Blow-Dry — ₹2,200</option>
+                  <option value="Hair Studio — Parisian Elixir Hair Spa (₹4,800)">Parisian Elixir Hair Spa Ritual — ₹4,800</option>
+                  <option value="Hair Studio — Bespoke Hair Colour & Balayage (₹9,500)">Bespoke Hair Colour & French Balayage — ₹9,500</option>
+                  <option value="Hair Studio — Silk Keratin & Smoothening (₹11,000)">Silk Keratin & Cashmere Smoothening — ₹11,000</option>
+                </optgroup>
+                <optgroup label="SKIN & BEAUTY">
+                  <option value="Skin & Beauty — Maison 24K Gold Luxury Facial (₹6,500)">Maison 24K Gold & Rose Luxury Facial — ₹6,500</option>
+                  <option value="Skin & Beauty — Botanical Purifying Clean-Up (₹3,200)">Botanical Purifying Clean-Up — ₹3,200</option>
+                  <option value="Skin & Beauty — Hydra-Lumière Skin Hydration (₹5,800)">Hydra-Lumière Deep Skin Hydration — ₹5,800</option>
+                  <option value="Skin & Beauty — Saffron & Pearl Detan Treatment (₹3,800)">Saffron & Pearl Radiance Detan — ₹3,800</option>
+                </optgroup>
+                <optgroup label="NAIL LOUNGE">
+                  <option value="Nail Lounge — Parisian Spa Manicure (₹2,000)">Parisian Spa Manicure — ₹2,000</option>
+                  <option value="Nail Lounge — Velvet Rose & Shea Pedicure (₹2,600)">Velvet Rose & Shea Pedicure — ₹2,600</option>
+                  <option value="Nail Lounge — Sculpted Soft-Gel Extensions (₹4,500)">Sculpted Soft-Gel Extensions — ₹4,500</option>
+                  <option value="Nail Lounge — Minimalist Couture Nail Art (₹1,800)">Minimalist Couture Nail Art — ₹1,800</option>
+                </optgroup>
+                <optgroup label="BRIDAL COUTURE">
+                  <option value="Bridal Couture — The Royale Bridal Makeup (₹45,000)">The Royale Bridal Couture Makeup — ₹45,000</option>
+                  <option value="Bridal Couture — Engagement & Cocktail Look (₹22,000)">Engagement & Cocktail Lumière Look — ₹22,000</option>
+                  <option value="Bridal Couture — Soirée Party Makeup (₹12,000)">Soirée & Family Party Makeup — ₹12,000</option>
+                  <option value="Bridal Couture — Bridal Hairstyling & Draping (₹8,500)">Editorial Bridal Hairstyling & Draping — ₹8,500</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Preferred Stylist -->
+            <div>
+              <label for="artist-select" class="micro-label text-[10px] text-espresso/70 block mb-1">Preferred Artist</label>
+              <select id="artist-select" name="artist" class="atelier-input bg-transparent cursor-pointer">
+                <option value="Maison Concierge Recommendation">No Preference — Maison Concierge Selection</option>
+                <option value="Camille Laurent (Creative Hair Director)">Camille Laurent — Creative Hair Director</option>
+                <option value="Aarav Malhotra (Master Colourist)">Aarav Malhotra — Master Colourist</option>
+                <option value="Meera Kapoor (Head of Bridal Couture)">Meera Kapoor — Head of Bridal Couture</option>
+                <option value="Elena Rostova (Lead Aesthetician)">Elena Rostova — Lead Aesthetician</option>
+              </select>
+            </div>
+
+            <!-- Appointment Date -->
+            <div>
+              <label for="booking-date" class="micro-label text-[10px] text-espresso/70 block mb-1">Preferred Date *</label>
+              <input type="date" id="booking-date" name="date" required class="atelier-input cursor-pointer" />
+            </div>
+
+            <!-- Preferred Time -->
+            <div>
+              <label for="booking-time" class="micro-label text-[10px] text-espresso/70 block mb-1">Preferred Time *</label>
+              <select id="booking-time" name="time" required class="atelier-input bg-transparent cursor-pointer">
+                <option value="" disabled selected>Select an appointment slot</option>
+                <option value="10:30 AM">10:30 AM — Morning Sanctuary</option>
+                <option value="12:00 PM">12:00 PM — Midday Ritual</option>
+                <option value="02:00 PM">02:00 PM — Afternoon Session</option>
+                <option value="04:00 PM">04:00 PM — Late Afternoon</option>
+                <option value="06:00 PM">06:00 PM — Evening Lumière</option>
+                <option value="07:30 PM">07:30 PM — Twilight Private Slot</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Validation Message Box (Replaces alert) -->
+          <div id="booking-error" class="hidden p-4 bg-ivory border border-espresso/40 text-xs text-espresso text-center">
+            Please complete your Name, Phone Number, Service, Date, and Preferred Time so our concierge may confirm your suite.
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-4 text-center">
+            <button type="submit" class="w-full sm:w-auto micro-label bg-espresso text-ivory px-12 py-4.5 py-4 border border-espresso hover:bg-champagne hover:text-espresso hover:border-champagne transition-all duration-500">
+              Confirm Private Appointment
+            </button>
+            <p class="text-[11px] text-espresso/50 mt-4 font-light">
+              Complimentary valet parking and organic herbal infusions await upon arrival.
+            </p>
+          </div>
+        </form>
+
+        <!-- Exquisite Booking Confirmation Card (Shown on Submit) -->
+        <div id="booking-confirmation" class="hidden border border-champagne bg-ivory p-8 sm:p-12 text-center">
+          <p class="micro-label text-[10px] text-espresso/60 mb-2">Reservation Confirmed • Ref <span id="conf-ref" class="text-espresso font-medium">#ME-8492</span></p>
+          <h3 class="font-editorial text-3xl sm:text-5xl font-light text-espresso mb-4">
+            We Await Your Arrival, <span id="conf-name" class="italic">Guest</span>.
+          </h3>
+          <p class="text-sm text-espresso/75 font-light max-w-lg mx-auto mb-8 leading-relaxed">
+            Your appointment request details are ready. The request will need to be connected to the salon booking system before the concierge can receive or confirm it.
+          </p>
+
+          <div class="max-w-lg mx-auto border-y border-champagne/60 py-6 mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-xs">
+            <div>
+              <span class="micro-label text-[9px] text-espresso/55 block">Selected Ritual</span>
+              <span id="conf-service" class="font-editorial text-lg text-espresso"></span>
+            </div>
+            <div>
+              <span class="micro-label text-[9px] text-espresso/55 block">Assigned Artist</span>
+              <span id="conf-artist" class="font-editorial text-lg text-espresso"></span>
+            </div>
+            <div>
+              <span class="micro-label text-[9px] text-espresso/55 block">Date & Time</span>
+              <span id="conf-datetime" class="font-editorial text-lg text-espresso"></span>
+            </div>
+            <div>
+              <span class="micro-label text-[9px] text-espresso/55 block">Contact Registered</span>
+              <span id="conf-phone" class="font-editorial text-lg text-espresso"></span>
+            </div>
+          </div>
+
+          <button type="button" id="book-another-btn" class="micro-label text-[10px] border border-espresso px-7 py-3.5 text-espresso hover:bg-espresso hover:text-ivory transition-colors">
+            Reserve Another Ritual
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 9. CONTACT & LOCATION                                                 -->
+  <!-- ===================================================================== -->
+  <section id="contact" class="py-24 sm:py-32 bg-ivory">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+        
+        <!-- Left Flagship Details -->
+        <div class="lg:col-span-5 flex flex-col justify-between reveal">
+          <div>
+            <p class="micro-label text-espresso/60 mb-4">07 — Visit The Maison</p>
+            <h2 class="font-editorial text-4xl sm:text-5xl font-light text-espresso leading-tight mb-8">
+              Flagship Sanctuary
+            </h2>
+
+            <div class="space-y-7 border-t border-champagne/50 pt-8 text-sm font-light">
+              <div>
+                <p class="micro-label text-[10px] text-espresso/55 mb-1.5">Phagwara Studio</p>
+                <p class="font-editorial text-2xl text-espresso leading-snug">
+                  Lovely Professional University,<br />
+                  Phagwara, Punjab 144411, India
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <p class="micro-label text-[10px] text-espresso/55 mb-1.5">Telephone</p>
+                  <a href="tel:+918950470066" class="text-espresso hover:text-espresso/70 transition-colors">+91 89504 70066</a>
+                </div>
+                <div>
+                  <p class="micro-label text-[10px] text-espresso/55 mb-1.5">WhatsApp Concierge</p>
+                  <a href="https://wa.me/918950470066?text=Bonjour%20MAISON%20%C3%89L%C3%89GANCE%2C%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" class="text-espresso editorial-link">
+                    +91 89504 70066
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <p class="micro-label text-[10px] text-espresso/55 mb-1.5">Atelier Hours</p>
+                <p class="text-espresso/85">Tuesday – Sunday: 10:00 AM – 8:30 PM</p>
+                <p class="text-espresso/60 italic font-editorial text-base mt-0.5">Monday: Reserved for Private Bridal & VIP Suites</p>
+              </div>
+
+              <div>
+                <p class="micro-label text-[10px] text-espresso/55 mb-1.5">Social Journal</p>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="editorial-link text-espresso">
+                  @maisonelegance.in
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-champagne/40">
+            <a href="https://www.google.com/maps/search/?api=1&query=Lovely+Professional+University%2C+Phagwara+144411" target="_blank" rel="noopener noreferrer" class="micro-label text-[10px] inline-flex items-center gap-2 text-espresso editorial-link">
+              Open Directions in Google Maps ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Styled Google Maps Embed -->
+        <div class="lg:col-span-7 min-h-[380px] sm:min-h-[460px] border border-champagne/60 bg-warm-beige overflow-hidden reveal reveal-delay-1">
+          <iframe
+            title="MAISON ÉLÉGANCE Location Map — Lovely Professional University, Phagwara"
+            src="https://www.google.com/maps?q=Lovely+Professional+University%2C+Phagwara+144411&output=embed"
+            class="w-full h-full min-h-[380px] border-0 editorial-map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================== -->
+  <!-- 10. FOOTER — ESPRESSO & CHAMPAGNE LUXURY CLOSING                      -->
+  <!-- ===================================================================== -->
+  <footer class="bg-espresso text-ivory pt-20 pb-12 border-t border-champagne/25">
+    <div class="max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 pb-16 border-b border-champagne/20">
+        <div>
+          <span class="micro-label text-[10px] text-champagne block mb-2">Paris • Phagwara • Mumbai</span>
+          <a href="#hero" class="font-editorial text-3xl sm:text-4xl tracking-[0.18em] uppercase text-soft-white">
+            MAISON ÉLÉGANCE
+          </a>
+          <p class="font-editorial italic text-xl text-champagne/90 mt-2">
+            “Where Every Detail Defines Beauty.”
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer Navigation">
+          <a href="#about" class="micro-label text-[10px] text-ivory/80 hover:text-champagne transition-colors">About</a>
+          <a href="#services" class="micro-label text-[10px] text-ivory/80 hover:text-champagne transition-colors">Services</a>
+          <a href="#artists" class="micro-label text-[10px] text-ivory/80 hover:text-champagne transition-colors">The Artists</a>
+          <a href="#gallery" class="micro-label text-[10px] text-ivory/80 hover:text-champagne transition-colors">Gallery</a>
+          <a href="#booking" class="micro-label text-[10px] text-ivory/80 hover:text-champagne transition-colors">Reservations</a>
+          <a href="#contact" class="micro-label text-[10px] text-ivory/80 hover:text-champagne transition-colors">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Bottom Row: Social Icons & Copyright -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-ivory/55 font-light">
+        <p>© <span id="current-year">2026</span> MAISON ÉLÉGANCE India. All Rights Reserved.</p>
+
+        <!-- Social Media Icons -->
+        <div class="flex items-center space-x-6">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-ivory/75 hover:text-champagne transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-ivory/75 hover:text-champagne transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="text-ivory/75 hover:text-champagne transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ===================================================================== -->
+  <!-- FLOATING WHATSAPP CONCIERGE ICON                                      -->
+  <!-- ===================================================================== -->
+  <a
+    href="https://wa.me/918950470066?text=Bonjour%20MAISON%20%C3%89L%C3%89GANCE%2C%20I%20would%20like%20to%20book%20a%20private%20appointment."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with MAISON ÉLÉGANCE Concierge on WhatsApp"
+    class="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-espresso text-ivory border border-champagne/60 px-4 py-3.5 shadow-xl hover:bg-champagne hover:text-espresso transition-all duration-500"
+  >
+    <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+    </svg>
+    <span class="hidden sm:inline micro-label text-[10px]">Concierge</span>
+  </a>
+
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT — INTERACTIONS, EDITABLE PRICES, GALLERY & BOOKING         -->
+  <!-- ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Sticky Transparent-to-Frosted-Ivory Navigation
+      const navbar = document.getElementById('navbar');
+      const navInner = document.getElementById('nav-inner');
+
+      const handleScroll = () => {
+        if (window.scrollY > 60) {
+          navbar.classList.remove('text-soft-white');
+          navbar.classList.add('bg-ivory/95', 'backdrop-blur-md', 'text-espresso', 'shadow-[0_4px_30px_rgba(41,35,31,0.04)]');
+          navInner.classList.remove('border-soft-white/15');
+          navInner.classList.add('border-champagne/45');
+        } else {
+          navbar.classList.add('text-soft-white');
+          navbar.classList.remove('bg-ivory/95', 'backdrop-blur-md', 'text-espresso', 'shadow-[0_4px_30px_rgba(41,35,31,0.04)]');
+          navInner.classList.add('border-soft-white/15');
+          navInner.classList.remove('border-champagne/45');
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      // 2. Full-Screen Editorial Mobile Navigation Drawer
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const bar1 = document.getElementById('bar-1');
+      const bar2 = document.getElementById('bar-2');
+      const bar3 = document.getElementById('bar-3');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      let drawerOpen = false;
+
+      const toggleDrawer = () => {
+        drawerOpen = !drawerOpen;
+        mobileMenuBtn.setAttribute('aria-expanded', drawerOpen);
+        mobileDrawer.setAttribute('aria-hidden', !drawerOpen);
+
+        if (drawerOpen) {
+          mobileDrawer.classList.remove('opacity-0', 'pointer-events-none');
+          navbar.classList.remove('text-espresso');
+          navbar.classList.add('text-ivory');
+          bar1.style.transform = 'translateY(7px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar3.style.transform = 'translateY(-7px) rotate(-45deg)';
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileDrawer.classList.add('opacity-0', 'pointer-events-none');
+          bar1.style.transform = 'none';
+          bar2.style.opacity = '1';
+          bar3.style.transform = 'none';
+          document.body.style.overflow = '';
+          handleScroll();
+        }
+      };
+
+      mobileMenuBtn.addEventListener('click', toggleDrawer);
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (drawerOpen) toggleDrawer();
+        });
+      });
+
+      // 3. IntersectionObserver Scroll-Reveal Animations
+      const revealEls = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      // 4. Editable Indian Rupee (₹) Prices with LocalStorage Persistence
+      const toggleEditBtn = document.getElementById('toggle-edit-prices');
+      const doneEditBtn = document.getElementById('done-edit-btn');
+      const resetPricesBtn = document.getElementById('reset-prices-btn');
+      const editBtnLabel = document.getElementById('edit-btn-label');
+      const editNotice = document.getElementById('edit-mode-notice');
+      const servicesGrid = document.getElementById('services-grid');
+      const priceSpans = document.querySelectorAll('[data-price]');
+
+      // Store default prices
+      const defaultPrices = {};
+      priceSpans.forEach(span => {
+        defaultPrices[span.dataset.price] = span.textContent.trim();
+      });
+
+      // Load saved prices if present
+      try {
+        const saved = JSON.parse(localStorage.getItem('maison_elegance_prices') || '{}');
+        priceSpans.forEach(span => {
+          if (saved[span.dataset.price]) {
+            span.textContent = saved[span.dataset.price];
+          }
+        });
+      } catch (e) {
+        // Ignore storage errors in restricted iframes
+      }
+
+      let isEditingPrices = false;
+      const setEditMode = (active) => {
+        isEditingPrices = active;
+        servicesGrid.classList.toggle('price-editable-active', active);
+        editNotice.classList.toggle('hidden', !active);
+        resetPricesBtn.classList.toggle('hidden', !active);
+        editBtnLabel.textContent = active ? 'Save INR Prices' : 'Edit INR Prices';
+
+        priceSpans.forEach(span => {
+          span.setAttribute('contenteditable', active ? 'true' : 'false');
+        });
+
+        if (!active) {
+          // Persist updated prices
+          const updated = {};
+          priceSpans.forEach(span => {
+            updated[span.dataset.price] = span.textContent.trim();
+          });
+          try {
+            localStorage.setItem('maison_elegance_prices', JSON.stringify(updated));
+          } catch (e) {}
+        }
+      };
+
+      toggleEditBtn.addEventListener('click', () => setEditMode(!isEditingPrices));
+      doneEditBtn.addEventListener('click', () => setEditMode(false));
+
+      resetPricesBtn.addEventListener('click', () => {
+        priceSpans.forEach(span => {
+          span.textContent = defaultPrices[span.dataset.price];
+        });
+        try {
+          localStorage.removeItem('maison_elegance_prices');
+        } catch (e) {}
+      });
+
+      // 6. Gallery Category Filter & Lightbox
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-espresso', 'text-ivory', 'border-espresso');
+            b.classList.add('bg-transparent', 'text-espresso', 'border-espresso/25');
+          });
+          btn.classList.add('bg-espresso', 'text-ivory', 'border-espresso');
+          btn.classList.remove('bg-transparent', 'border-espresso/25');
+
+          galleryItems.forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Lightbox Preview
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCat = document.getElementById('lightbox-category');
+      const lightboxCap = document.getElementById('lightbox-caption');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('img');
+          const cat = item.querySelector('span')?.textContent || '';
+          const cap = item.querySelector('p')?.textContent || img.alt;
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxCat.textContent = cat;
+          lightboxCap.textContent = cap;
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+      });
+
+      // 7. Interactive Appointment Booking Form
+      const bookingDateInput = document.getElementById('booking-date');
+      const bookingTimeSelect = document.getElementById('booking-time');
+      // Explicitly connect the service and artist controls before their handlers run.
+      const serviceSelect = document.getElementById('service-select');
+      const artistSelect = document.getElementById('artist-select');
+      const bookingForm = document.getElementById('booking-form');
+      const bookingSection = document.getElementById('booking');
+      const bookingError = document.getElementById('booking-error');
+      const bookingConfirmation = document.getElementById('booking-confirmation');
+      const bookAnotherBtn = document.getElementById('book-another-btn');
+
+      // Use local calendar dates (rather than UTC) to avoid timezone date shifts.
+      const localToday = () => {
+        const now = new Date();
+        const offset = now.getTimezoneOffset() * 60000;
+        return new Date(now.getTime() - offset).toISOString().slice(0, 10);
+      };
+      bookingDateInput.min = localToday();
+
+      const originalTimeOptions = Array.from(bookingTimeSelect.options)
+        .filter(option => option.value)
+        .map(option => ({ value: option.value, label: option.textContent }));
+
+      const setBookingMessage = (message) => {
+        bookingError.textContent = message;
+        bookingError.classList.remove('hidden');
+      };
+
+      const refreshTimeSlots = () => {
+        const chosenDate = bookingDateInput.value;
+        bookingTimeSelect.innerHTML = '<option value="" disabled selected>Select an appointment slot</option>';
+
+        if (!chosenDate) {
+          originalTimeOptions.forEach(slot => bookingTimeSelect.add(new Option(slot.label, slot.value)));
+          return;
+        }
+
+        // The published salon hours are Tuesday–Sunday, 10:00 AM–8:30 PM.
+        const [year, month, day] = chosenDate.split('-').map(Number);
+        const selectedDay = new Date(year, month - 1, day).getDay();
+
+        if (selectedDay === 1) {
+          bookingTimeSelect.add(new Option('Closed on Mondays — please choose another date', ''));
+          bookingTimeSelect.disabled = true;
+          return;
+        }
+
+        bookingTimeSelect.disabled = false;
+        const now = new Date();
+        const isToday = chosenDate === localToday();
+        let availableCount = 0;
+
+        originalTimeOptions.forEach(slot => {
+          const match = slot.value.match(/^(\d{1,2}):(\d{2})\s(AM|PM)$/);
+          if (!match) return;
+          let hour = Number(match[1]) % 12;
+          if (match[3] === 'PM') hour += 12;
+          const minutes = hour * 60 + Number(match[2]);
+          const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+          if (!isToday || minutes > currentMinutes) {
+            bookingTimeSelect.add(new Option(slot.label, slot.value));
+            availableCount++;
+          }
+        });
+
+        if (!availableCount) {
+          bookingTimeSelect.add(new Option('No remaining listed slots — choose another date', ''));
+          bookingTimeSelect.disabled = true;
+        }
+      };
+
+      bookingDateInput.addEventListener('change', () => {
+        refreshTimeSlots();
+        bookingError.classList.add('hidden');
+      });
+      refreshTimeSlots();
+
+      // A service or artist selected from the menu is carried into the form.
+      document.querySelectorAll('.select-service-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const option = Array.from(serviceSelect.options).find(item => item.value === btn.dataset.selectService);
+          if (option) serviceSelect.value = option.value;
+          bookingSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      document.querySelectorAll('.select-artist-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const option = Array.from(artistSelect.options).find(item => item.value === btn.dataset.selectArtist);
+          if (option) artistSelect.value = option.value;
+          bookingSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      bookingForm.addEventListener('input', () => bookingError.classList.add('hidden'));
+      bookingForm.addEventListener('change', () => bookingError.classList.add('hidden'));
+
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('guest-name').value.trim();
+        const phone = document.getElementById('guest-phone').value.trim();
+        const service = serviceSelect.value;
+        const artist = artistSelect.value;
+        const date = bookingDateInput.value;
+        const time = bookingTimeSelect.value;
+
+        if (name.length < 2) {
+          setBookingMessage('Please enter your full name (at least 2 characters).');
+          document.getElementById('guest-name').focus();
+          return;
+        }
+
+        // Accept Indian mobile numbers with optional +91 / 0 prefix, or international numbers.
+        const normalizedPhone = phone.replace(/[\s()-]/g, '');
+        const validPhone = /^(?:\+?91)?[6-9]\d{9}$/.test(normalizedPhone) ||
+                           /^\+[1-9]\d{7,14}$/.test(normalizedPhone);
+        if (!validPhone) {
+          setBookingMessage('Please enter a valid phone number, including country code if outside India.');
+          document.getElementById('guest-phone').focus();
+          return;
+        }
+
+        if (!service) {
+          setBookingMessage('Please select the signature ritual you would like to reserve.');
+          serviceSelect.focus();
+          return;
+        }
+        if (!date) {
+          setBookingMessage('Please choose your preferred appointment date.');
+          bookingDateInput.focus();
+          return;
+        }
+        if (date < localToday()) {
+          setBookingMessage('Please choose today or a future date.');
+          bookingDateInput.focus();
+          return;
+        }
+        if (new Date(date + 'T00:00:00').getDay() === 1) {
+          setBookingMessage('The Maison is closed on Mondays. Please choose Tuesday to Sunday.');
+          bookingDateInput.focus();
+          return;
+        }
+        if (!time || bookingTimeSelect.disabled) {
+          setBookingMessage('Please choose an available listed time slot.');
+          bookingTimeSelect.focus();
+          return;
+        }
+
+        bookingError.classList.add('hidden');
+
+        const [year, month, day] = date.split('-').map(Number);
+        const formattedDate = new Date(year, month - 1, day).toLocaleDateString('en-IN', {
+          weekday: 'short', day: 'numeric', month: 'long', year: 'numeric'
+        });
+
+        const randomRef = '#ME-' + Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('conf-ref').textContent = randomRef;
+        document.getElementById('conf-name').textContent = name;
+        document.getElementById('conf-service').textContent = service;
+        document.getElementById('conf-artist').textContent = artist;
+        document.getElementById('conf-datetime').textContent = `${formattedDate} at ${time}`;
+        document.getElementById('conf-phone').textContent = phone;
+
+        // This standalone HTML currently has no booking API connected.
+        // Label the result as a request, not as a confirmed salon reservation.
+        const confirmationIntro = bookingConfirmation.querySelector('p.text-sm');
+        if (confirmationIntro) {
+          confirmationIntro.innerHTML = 'Your appointment request has been prepared on this page. It has <strong class="font-normal text-espresso">not been sent to the salon</strong>; connect a booking service or database to receive and confirm reservations.';
+        }
+        const statusLabel = bookingConfirmation.querySelector('p.micro-label');
+        if (statusLabel) statusLabel.firstChild.textContent = 'Request Prepared • Ref ';
+
+        bookingForm.classList.add('hidden');
+        bookingConfirmation.classList.remove('hidden');
+        bookingConfirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      bookAnotherBtn.addEventListener('click', () => {
+        bookingForm.reset();
+        bookingDateInput.min = localToday();
+        refreshTimeSlots();
+        bookingConfirmation.classList.add('hidden');
+        bookingForm.classList.remove('hidden');
+        bookingForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+</body>
+</html>
